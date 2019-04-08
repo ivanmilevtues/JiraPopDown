@@ -1,0 +1,36 @@
+{
+    "name": "JiraPopDown",
+    "version": "1.0",
+    "description": "Remove the annoying Jira Pop Ups",
+    "permissions": [
+        "storage"
+    ],
+    "background": {
+        "scripts": [
+            "jquery-3.3.1.min.js",
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "images/vacuum.png",
+            "32": "images/vacuum.png",
+            "48": "images/vacuum.png",
+            "128": "images/vacuum.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://localhost:2990/jira/*"
+            ],
+            "js": [
+                "jquery-3.3.1.min.js",
+                "content.js"
+            ]
+        }
+    ],
+    
+    "manifest_version": 2
+}
