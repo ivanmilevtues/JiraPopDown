@@ -10,6 +10,9 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         clickIfDefined($('#aui-flag-container > div > div > ul > li:nth-child(1) > button'));
         clickIfDefined($('#inline-dialog-post-setup-announcement-database-setup > div.aui-inline-dialog-contents.contents > div > p.post-setup-discovery-buttons > a.postsetup-close-link.post-setup-discovery-close-js'));
         clickIfDefined($('#aui-flag-container > div > div > button'));
+        window.addEventListener('scroll', function (ev) {
+            removeIfDefined($('span:contains(\'Предложено за вас\')'));
+        });
     }
 });
 
@@ -17,4 +20,12 @@ function clickIfDefined(element) {
     if (element !== undefined) {
         element.click();
     }
+}
+
+
+function removeIfDefined(element) {
+    element.toArray().forEach(el => {
+        parent = el.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+        parent.remove();
+    });
 }
