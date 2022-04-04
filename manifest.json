@@ -24,7 +24,8 @@
         {
             "matches": [
                 "http://localhost:2990/jira/*",
-                "https://www.facebook.com/*"
+                "https://www.facebook.com/*",
+                "https://discord.com/*"
             ],
             "js": [
                 "jquery-3.3.1.min.js",
